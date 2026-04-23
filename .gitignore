@@ -1,0 +1,44 @@
+# Project exclude paths
+/.gradle/
+/build/
+/compose-slidable/build/
+/compose-slidable/build/classes/kotlin/android/main/
+/compose-slidable/build/classes/kotlin/iosArm64/main/klib/
+/compose-slidable/build/classes/kotlin/iosSimulatorArm64/main/klib/
+/compose-slidable/build/classes/kotlin/iosX64/main/klib/
+/demo/androidApp/build/
+/demo/shared/build/
+/demo/shared/build/classes/kotlin/android/main/
+/demo/shared/build/classes/kotlin/iosArm64/main/klib/
+/demo/shared/build/classes/kotlin/iosSimulatorArm64/main/klib/
+/demo/shared/build/classes/kotlin/iosX64/main/klib/
+
+# Gradle
+local.properties
+.kotlin/
+
+# IDE — IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# iOS / Xcode
+demo/iosApp/Pods/
+demo/iosApp/*.xcworkspace
+demo/iosApp/xcuserdata/
+*.xcuserstate
+*.xccheckout
+DerivedData/
+
+# Kotlin Multiplatform
+*.kotlin_module
+*.xcframework
+
+# Android
+*.ap_
