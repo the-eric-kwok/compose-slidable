@@ -1,5 +1,7 @@
 # Compose Slidable
 
+[![](https://jitpack.io/v/the-eric-kwok/compose-slidable.svg)](https://jitpack.io/#the-eric-kwok/compose-slidable)
+
 [English](./README.md)
 
 一个以 `compose-slidable` 依赖库为主、demo 作为附属样例的 Compose Multiplatform 工程，包含：

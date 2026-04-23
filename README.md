@@ -1,5 +1,7 @@
 # Compose Slidable
 
+[![](https://jitpack.io/v/the-eric-kwok/compose-slidable.svg)](https://jitpack.io/#the-eric-kwok/compose-slidable)
+
 [中文文档](./README.zh_CN.md)
 
 A Compose Multiplatform project centered on the `compose-slidable` library, with a demo as a companion example. It includes:
