@@ -57,9 +57,12 @@ data class SlidableAction(
 )
 
 private val CircleSize = 48.dp
-private val ButtonMargin = 12.dp
+private val ButtonMargin = 8.dp
 private val SnapAnimSpec = tween<Float>(durationMillis = 300, easing = FastOutSlowInEasing)
-private const val ResistanceFactor = 0.25f
+private val ButtonAnimSpec = tween<Float>(durationMillis = 200, easing = FastOutSlowInEasing)
+private const val ResistanceFactor = 0.15f
+private const val OverSlideButtonScaleFactor = 0.3f
+private const val OverSlideMarginScaleFactor = 6f
 
 private enum class SlidableSide(val sign: Float) {
     Start(-1f),
@@ -156,6 +159,25 @@ fun SlidableCell(
     var lastOverSlide by remember { mutableStateOf<Boolean?>(null) }
     var settleJob by remember { mutableStateOf<Job?>(null) }
 
+    val collapse: () -> Unit = {
+        val currentDrag = state.drag
+        settleJob?.cancel()
+        settleJob = coroutineScope.launch {
+            val currentJob = coroutineContext[Job]
+            try {
+                settleAnimatable.snapTo(currentDrag)
+                settleAnimatable.animateTo(0f, SnapAnimSpec) {
+                    state = state.copy(drag = value)
+                }
+            } finally {
+                if (settleJob === currentJob) {
+                    state = state.copy(openedSide = null)
+                    settleJob = null
+                }
+            }
+        }
+    }
+
     val overSlideTriggered = isOverSlide(state, configs)
     val visibleConfig = visibleConfig(state, configs)
 
@@ -175,6 +197,10 @@ fun SlidableCell(
                 metrics = metrics,
                 drag = config.axisDrag(state.drag),
                 overSlideTriggered = overSlideTriggered,
+                onActionClick = { action ->
+                    action.onClick()
+                    collapse()
+                },
                 modifier = Modifier.align(
                     when (config.side) {
                         SlidableSide.Start -> Alignment.CenterStart
@@ -226,6 +252,11 @@ fun SlidableCell(
                         }
                     }
                 )
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = null,
+                    enabled = state.openedSide != null
+                ) { collapse() }
         ) {
             content()
         }
@@ -390,6 +421,7 @@ private fun SlidableCellButtons(
     metrics: SlidableLayoutMetrics,
     drag: Float,
     overSlideTriggered: Boolean,
+    onActionClick: (SlidableAction) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val density = LocalDensity.current
@@ -401,6 +433,17 @@ private fun SlidableCellButtons(
     val iconTranslationDirection = when (config.side) {
         SlidableSide.End -> -1f
         SlidableSide.Start -> 1f
+    }
+
+    val overSlideButtonScale = if (config.primaryAction == null && drag > config.fullSnapPx) {
+        1f + ((drag - config.fullSnapPx) / (config.overThresholdPx - config.fullSnapPx)).coerceIn(0f, 1f) * OverSlideButtonScaleFactor
+    } else {
+        1f
+    }
+    val overSlideMarginScale = if (config.primaryAction == null && drag > config.fullSnapPx) {
+        1f + ((drag - config.fullSnapPx) / (config.overThresholdPx - config.fullSnapPx)).coerceIn(0f, 1f) * OverSlideMarginScaleFactor
+    } else {
+        1f
     }
 
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
@@ -416,7 +459,7 @@ private fun SlidableCellButtons(
                 ((drag - revealIndex * metrics.buttonSlotPx) / metrics.buttonSlotPx).coerceIn(0f, 1f)
             val nonPrimaryAlphaMult by animateFloatAsState(
                 targetValue = if (!isPrimary && config.primaryAction != null && drag > config.fullSnapPx) 0.5f else 1f,
-                animationSpec = tween(durationMillis = 200, easing = FastOutSlowInEasing),
+                animationSpec = ButtonAnimSpec,
                 label = "nonPrimaryAlpha"
             )
             val compositeAlpha = if (isPrimary) progress else progress * nonPrimaryAlphaMult
@@ -429,19 +472,14 @@ private fun SlidableCellButtons(
             val buttonWidthDp = with(density) { buttonWidthPx.toDp() }
             val iconAlignProgress by animateFloatAsState(
                 targetValue = if (isPrimary && overSlideTriggered) 1f else 0f,
-                animationSpec = tween(durationMillis = 200, easing = FastOutSlowInEasing),
+                animationSpec = ButtonAnimSpec,
                 label = "iconAlign"
             )
             val labelAlpha by animateFloatAsState(
                 targetValue = if (isPrimary && overSlideTriggered) 0f else 1f,
-                animationSpec = tween(durationMillis = 200, easing = FastOutSlowInEasing),
+                animationSpec = ButtonAnimSpec,
                 label = "labelAlpha"
             )
-            val overSlideScale = if (config.primaryAction == null && drag > config.fullSnapPx) {
-                1f + ((drag - config.fullSnapPx) / (config.overThresholdPx - config.fullSnapPx)).coerceIn(0f, 1f) * 0.05f
-            } else {
-                1f
-            }
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -449,7 +487,7 @@ private fun SlidableCellButtons(
                     .graphicsLayer {
                         alpha = compositeAlpha
                         if (!isPrimary || drag <= config.fullSnapPx) {
-                            val s = if (progress >= 1f) overSlideScale else progress
+                            val s = if (progress >= 1f) overSlideButtonScale else progress
                             scaleX = s
                             scaleY = s
                         }
@@ -458,7 +496,7 @@ private fun SlidableCellButtons(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
                         enabled = progress >= 1f
-                    ) { action.onClick() }
+                    ) { onActionClick(action) }
             ) {
                 Box(
                     modifier = Modifier
@@ -491,9 +529,9 @@ private fun SlidableCellButtons(
                 )
             }
 
-            if (index < n - 1) Spacer(Modifier.width(ButtonMargin))
+            if (index < n - 1) Spacer(Modifier.width(ButtonMargin * overSlideMarginScale))
         }
 
-        if (config.side == SlidableSide.End) Spacer(Modifier.width(ButtonMargin))
+        if (config.side == SlidableSide.End) Spacer(Modifier.width(ButtonMargin * overSlideMarginScale))
     }
 }
