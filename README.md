@@ -1,36 +1,66 @@
 # Compose Slidable
 
-一个以 `compose-slidable` 依赖库为主、demo 作为附属样例的 Compose Multiplatform 工程，包含：
+[中文文档](./README.zh_CN.md)
 
-- `compose-slidable/`：可复用的 CMP 依赖库
-- `demo/androidApp/`：Android 示例应用
-- `demo/shared/`：Android / iOS 共用的 demo 代码
-- `demo/iosApp/`：iOS 示例宿主
+A Compose Multiplatform project centered on the `compose-slidable` library, with a demo as a companion example. It includes:
 
-## 本地运行 demo
+- `compose-slidable/`: Reusable CMP library
+- `demo/androidApp/`: Android sample app
+- `demo/shared/`: Shared demo code for Android / iOS
+- `demo/iosApp/`: iOS sample host
+
+## Run the Demo Locally
 
 ```bash
 ./gradlew :androidApp:assembleDebug
 ```
 
-## 平台支持
+## Platform Support
 
-当前库模块已切到 Kotlin Multiplatform，源码位于 `commonMain`，默认配置了：
+The library module uses Kotlin Multiplatform with source in `commonMain`, configured for:
 
 - Android
 - iOS (`iosX64` / `iosArm64` / `iosSimulatorArm64`)
 
-## 作为依赖使用
+## Installation
 
-当前工程默认提供两种使用方式：
+### Via JitPack (Recommended)
 
-1. 直接项目依赖
+Add the JitPack repository in `settings.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+}
+```
+
+Add the dependency in your module's `build.gradle.kts`:
+
+```kotlin
+// Android project
+implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+
+// KMP project
+commonMain.dependencies {
+    implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+}
+```
+
+Replace `<version>` with a Git tag on GitHub (e.g. `0.1.0`) or the first 7 characters of a commit hash.
+
+### Other Options
+
+1. Local project dependency
 
 ```kotlin
 implementation(project(":compose-slidable"))
 ```
 
-2. 发布到本地 Maven 后再引用
+2. Publish to local Maven then reference it
 
 ```bash
 ./gradlew :compose-slidable:publishToMavenLocal
@@ -40,13 +70,13 @@ implementation(project(":compose-slidable"))
 implementation("com.erickwok:compose-slidable:0.1.0")
 ```
 
-## 核心 API
+## Core API
 
 ```kotlin
 SwipeActionCard(
     startActions = listOf(...),
     endActions = listOf(...)
 ) {
-    // 你的卡片内容
+    // Your card content
 }
 ```
