@@ -252,13 +252,18 @@ fun SlidableCell(
                         }
                     }
                 )
-                .clickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = null,
-                    enabled = state.openedSide != null
-                ) { collapse() }
         ) {
             content()
+            if (state.openedSide != null) {
+                Box(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null
+                        ) { collapse() }
+                )
+            }
         }
     }
 }

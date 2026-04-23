@@ -141,7 +141,14 @@ private fun SlidableCellDemo() {
                         )
                     )
                 ) {
-                    DemoCard(item = item)
+                    DemoCard(
+                        item = item,
+                        onClick = {
+                            items.replace(item.id) { current ->
+                                current.copy(subtitle = "刚刚点击了 item（id=${current.id}）")
+                            }
+                        }
+                    )
                 }
             }
         }
@@ -151,9 +158,11 @@ private fun SlidableCellDemo() {
 @Composable
 private fun DemoCard(
     item: DemoItem,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
 ) {
     Card(
+        onClick = onClick,
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp)
     ) {
