@@ -1,7 +1,5 @@
 # Compose Slidable
 
-[![](https://jitpack.io/v/the-eric-kwok/compose-slidable.svg)](https://jitpack.io/#the-eric-kwok/compose-slidable)
-
 [English](./README.md)
 
 一个以 `compose-slidable` 依赖库为主、demo 作为附属样例的 Compose Multiplatform 工程，包含：
@@ -26,16 +24,14 @@
 
 ## 作为依赖使用
 
-### 通过 JitPack 引入（推荐）
-
-在 `settings.gradle.kts` 中添加 JitPack 仓库：
+在 `settings.gradle.kts` 中添加 Maven 仓库：
 
 ```kotlin
 dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://jitpack.io")
+        maven("https://the-eric-kwok.github.io/compose-slidable")
     }
 }
 ```
@@ -44,15 +40,15 @@ dependencyResolutionManagement {
 
 ```kotlin
 // Android 项目
-implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+implementation("com.erickwok:compose-slidable:<version>")
 
 // KMP 项目
 commonMain.dependencies {
-    implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+    implementation("com.erickwok:compose-slidable:<version>")
 }
 ```
 
-将 `<version>` 替换为 GitHub 上的 Git tag（如 `0.1.0`）或 commit hash 前 7 位。
+将 `<version>` 替换为发布版本号（如 `0.1.0`）。
 
 ### 其他方式
 

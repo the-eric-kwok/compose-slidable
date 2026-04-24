@@ -44,3 +44,12 @@ kotlin {
         }
     }
 }
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPages"
+            url = uri(layout.buildDirectory.dir("maven-repo"))
+        }
+    }
+}

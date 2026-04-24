@@ -1,7 +1,5 @@
 # Compose Slidable
 
-[![](https://jitpack.io/v/the-eric-kwok/compose-slidable.svg)](https://jitpack.io/#the-eric-kwok/compose-slidable)
-
 [中文文档](./README.zh_CN.md)
 
 A Compose Multiplatform project centered on the `compose-slidable` library, with a demo as a companion example. It includes:
@@ -26,16 +24,14 @@ The library module uses Kotlin Multiplatform with source in `commonMain`, config
 
 ## Installation
 
-### Via JitPack (Recommended)
-
-Add the JitPack repository in `settings.gradle.kts`:
+Add the Maven repository in `settings.gradle.kts`:
 
 ```kotlin
 dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://jitpack.io")
+        maven("https://the-eric-kwok.github.io/compose-slidable")
     }
 }
 ```
@@ -44,15 +40,15 @@ Add the dependency in your module's `build.gradle.kts`:
 
 ```kotlin
 // Android project
-implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+implementation("com.erickwok:compose-slidable:<version>")
 
 // KMP project
 commonMain.dependencies {
-    implementation("com.github.the-eric-kwok:compose-slidable:<version>")
+    implementation("com.erickwok:compose-slidable:<version>")
 }
 ```
 
-Replace `<version>` with a Git tag on GitHub (e.g. `0.1.0`) or the first 7 characters of a commit hash.
+Replace `<version>` with a release version (e.g. `0.1.0`).
 
 ### Other Options
 
