@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.erickwok.composeslidable.demo"
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.erickwok.composeslidable.demo"

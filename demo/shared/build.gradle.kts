@@ -16,7 +16,7 @@ kotlin {
 
     android {
         namespace = "com.erickwok.composeslidable.demoshared"
-        compileSdk = 37
+        compileSdk = 36
         minSdk = 24
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
