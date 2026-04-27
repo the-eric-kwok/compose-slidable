@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../compose-slidable/0.1.2/compose-slidable-0.1.2.module",
+    "group": "com.erickwok",
+    "module": "compose-slidable",
+    "version": "0.1.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-slidable.aar",
+          "url": "compose-slidable-android-0.1.2.aar",
+          "size": 54048,
+          "sha512": "4f62593e4df6d13739f4e426f41722d53529fd1632b921b9b47515b74284eb5ae7801108c95a26a5943dad27fc4e16407cc7b1f898477719f036873ad0ef0855",
+          "sha256": "c4678d15466a9486a89b024263d808cef2c4dd0842f49a0a75750c59a6bfa5ef",
+          "sha1": "1fa849494909d94703df3df2b8344639df01e1fc",
+          "md5": "2e9fb3a43bae2da93e17de182fb74cda"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.material",
+          "module": "material-icons-extended",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-slidable.aar",
+          "url": "compose-slidable-android-0.1.2.aar",
+          "size": 54048,
+          "sha512": "4f62593e4df6d13739f4e426f41722d53529fd1632b921b9b47515b74284eb5ae7801108c95a26a5943dad27fc4e16407cc7b1f898477719f036873ad0ef0855",
+          "sha256": "c4678d15466a9486a89b024263d808cef2c4dd0842f49a0a75750c59a6bfa5ef",
+          "sha1": "1fa849494909d94703df3df2b8344639df01e1fc",
+          "md5": "2e9fb3a43bae2da93e17de182fb74cda"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "compose-slidable-android-0.1.2-sources.jar",
+          "url": "compose-slidable-android-0.1.2-sources.jar",
+          "size": 5070,
+          "sha512": "74c8bd85fa6b2bbe47cdb2de093f5f6ef613c5716860974dea670640580c1b7b93e07148e4e88b17f832c333da3181ac06a1918bb4f22f28cd14d2735df025a9",
+          "sha256": "178046e0852a72fc9e597e53246d6c1031743c567cd40d9f46ae443a55820531",
+          "sha1": "0b924cda65381fa51640b9d0daeb74445b227afd",
+          "md5": "6a3c5b3a024ca9dd95848104c86d8722"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.erickwok",
+    "module": "compose-slidable",
+    "version": "0.1.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.10.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.material",
+          "module": "material-icons-extended",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-slidable-metadata-0.1.2.jar",
+          "url": "compose-slidable-0.1.2.jar",
+          "size": 4031,
+          "sha512": "71167c552d758b9c12fc7fe1f7627ecd0406bf8b2618bf08b6d10d1f09dd33333ce35c00cf7e728db49f8cae156beb8c0cab98eb3f23eb4f02eab750a9ebd72a",
+          "sha256": "48a4743fdc4c176e69e982e241c21f544de130e12ec36c128a9f12c1d4f07d00",
+          "sha1": "0257ba0286dac1725d1b4fca2ba7c0aca226bf3d",
+          "md5": "f5518be4a65ac6062027f8142b00195a"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "compose-slidable-kotlin-0.1.2-sources.jar",
+          "url": "compose-slidable-0.1.2-sources.jar",
+          "size": 5070,
+          "sha512": "74c8bd85fa6b2bbe47cdb2de093f5f6ef613c5716860974dea670640580c1b7b93e07148e4e88b17f832c333da3181ac06a1918bb4f22f28cd14d2735df025a9",
+          "sha256": "178046e0852a72fc9e597e53246d6c1031743c567cd40d9f46ae443a55820531",
+          "sha1": "0b924cda65381fa51640b9d0daeb74445b227afd",
+          "md5": "6a3c5b3a024ca9dd95848104c86d8722"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-android/0.1.2/compose-slidable-android-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-android",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-android/0.1.2/compose-slidable-android-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-android",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-android/0.1.2/compose-slidable-android-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-android",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosarm64/0.1.2/compose-slidable-iosarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosarm64/0.1.2/compose-slidable-iosarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosArm64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosarm64/0.1.2/compose-slidable-iosarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosarm64/0.1.2/compose-slidable-iosarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iossimulatorarm64/0.1.2/compose-slidable-iossimulatorarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iossimulatorarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iossimulatorarm64/0.1.2/compose-slidable-iossimulatorarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iossimulatorarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iossimulatorarm64/0.1.2/compose-slidable-iossimulatorarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iossimulatorarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iossimulatorarm64/0.1.2/compose-slidable-iossimulatorarm64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iossimulatorarm64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosx64/0.1.2/compose-slidable-iosx64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosx64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosx64/0.1.2/compose-slidable-iosx64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosx64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosX64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosx64/0.1.2/compose-slidable-iosx64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosx64",
+        "version": "0.1.2"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-slidable-iosx64/0.1.2/compose-slidable-iosx64-0.1.2.module",
+        "group": "com.erickwok",
+        "module": "compose-slidable-iosx64",
+        "version": "0.1.2"
+      }
+    }
+  ]
+}
