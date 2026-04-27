@@ -9,6 +9,10 @@ A Compose Multiplatform project centered on the `compose-slidable` library, with
 - `demo/shared/`: Shared demo code for Android / iOS
 - `demo/iosApp/`: iOS sample host
 
+## Demo
+
+<video src="./docs/assets/demo.mp4" width="320" height="240" controls>Demo video</video>
+
 ## Run the Demo Locally
 
 ```bash

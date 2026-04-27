@@ -37,7 +37,6 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.material.icons.extended)
             implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.multihaptic.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

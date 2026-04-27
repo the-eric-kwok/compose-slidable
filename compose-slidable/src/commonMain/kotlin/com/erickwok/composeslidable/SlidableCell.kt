@@ -35,15 +35,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import top.ltfan.multihaptic.HapticEffect
-import top.ltfan.multihaptic.PrimitiveType
-import top.ltfan.multihaptic.compose.rememberVibrator
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
@@ -154,7 +153,7 @@ fun SlidableCell(
 
     val settleAnimatable = remember { Animatable(0f) }
     val coroutineScope = rememberCoroutineScope()
-    val vibrator = rememberVibrator()
+    val hapticFeedback = LocalHapticFeedback.current
     var state by remember { mutableStateOf(SlidableRuntimeState()) }
     var lastOverSlide by remember { mutableStateOf<Boolean?>(null) }
     var settleJob by remember { mutableStateOf<Job?>(null) }
@@ -184,7 +183,7 @@ fun SlidableCell(
     LaunchedEffect(overSlideTriggered) {
         lastOverSlide?.let { wasOverSlide ->
             if (wasOverSlide != overSlideTriggered) {
-                vibrator.vibrate(HapticEffect { predefined(PrimitiveType.Click) { scale = 1f } })
+                hapticFeedback.performHapticFeedback(HapticFeedbackType.GestureThresholdActivate)
             }
         }
         lastOverSlide = overSlideTriggered

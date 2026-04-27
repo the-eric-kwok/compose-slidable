@@ -9,6 +9,10 @@
 - `demo/shared/`：Android / iOS 共用的 demo 代码
 - `demo/iosApp/`：iOS 示例宿主
 
+## Demo
+
+<video src="./docs/assets/demo.mp4" width="320" height="240" controls>Demo video</video>
+
 ## 本地运行 demo
 
 ```bash
