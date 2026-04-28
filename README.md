@@ -11,7 +11,7 @@ A Compose Multiplatform project centered on the `compose-slidable` library, with
 
 ## Demo
 
-<video src="./docs/assets/demo.mp4" width="320" height="240" controls>Demo video</video>
+<img src="./docs/assets/demo.gif" width=270></img>
 
 ## Run the Demo Locally
 
