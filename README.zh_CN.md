@@ -11,7 +11,7 @@
 
 ## Demo
 
-<video src="./docs/assets/demo.mp4" width="320" height="240" controls>Demo video</video>
+<img src="./docs/assets/demo.gif" width=270></img>
 
 ## 本地运行 demo
 
